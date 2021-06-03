@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@next"></script>
-	<script src="event.js"></script>
+	<script src="event.js" defer></script>
     <title>Page1</title>
 </head>
 <body>
@@ -13,27 +13,28 @@
         <header class="hdr">
             <div class="menu_boutton"></div>
             <div class="menu_mobile">
-                <a href="#" class="item_mobile">menu1</a>
-                <a href="#" class="item_mobile">menu2</a>
-                <a href="#" class="item_mobile">menu3</a>
-                <a href="#" class="item_mobile">menu4</a>
+                <a href="#" class="item_mobile">{{ menu1 }}</a>
+                <a href="#" class="item_mobile">{{menu2}}</a>
+                <a href="#" class="item_mobile">{{menu3}}</a>
+                <a href="#" class="item_mobile">{{menu4}}</a>
             </div>
         </header>
         <aside class="menu">
-            <a href="#" class="item_desktop">menu1</a>
-            <a href="#" class="item_desktop">menu2</a>
-            <a href="#" class="item_desktop">menu3</a>
-            <a href="#" class="item_desktop">menu4</a>
+            <a href="#" class="item_desktop">{{menu1}}</a>
+            <a href="#" class="item_desktop">{{menu2}}</a>
+            <a href="#" class="item_desktop">{{menu3}}</a>
+            <a href="#" class="item_desktop">{{menu4}}</a>
         </aside>
         <main class="main">
             
-            <section class="principal">
-                
-            </section>
+                <produit v-for="p in produits" v-bind:nom="p.nom" v-bind:prix="p.prix">
+
+                </produit>
         </main>
         <footer class="pied_page">
 
         </footer>
     </div>
+
 </body>
 </html>
